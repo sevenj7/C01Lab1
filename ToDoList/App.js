@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import Counter from './components/Counter';
+import ToDoList from './components/ToDoList';
 
 export default function App() {
   return (
     <View style={styles.container}>
-        <Counter initialValues={[5, 10, 15]} />
+        <ToDoList tasks={["C01 Lab01", "C01 Final Project", "Apply to jobs on CSM"]}/>
         <StatusBar style="auto" />
     </View>
   );

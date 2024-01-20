@@ -15,17 +15,17 @@ const ToDoList = ({tasks}) => {
     };
 
     const removeToDo = (id) => {
-        setToDos((prevToDos) => prevToDos.filter((task) => task.id != id));
+        setToDos((prevToDos) => prevToDos.filter((task) => task.id !== id));
     };
 
     return (
         <View style={styles.todoListContainer}>
-            {toDos.map((task) => {
+            {toDos.map((task) => (
                 <View style={styles.todoItem} key={task.id}>
                     <Text>{task.title}</Text>
-                    <Button onPress={removeToDo}>Remove</Button>
+                    <Button onPress={() => removeToDo(task.id)} title="Remove"/>
                 </View>
-            })}
+            ))}
             <AddTask onAddTask={addToDo}></AddTask>
         </View>
     );

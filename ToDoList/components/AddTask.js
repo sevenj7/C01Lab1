@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import 'react-native-get-random-values';
 
-const AddTask = (onAddTask) => {
-    const [title, setTitle] = useState("");
+const AddTask = ({onAddTask}) => {
+    const [title, setTitle] = useState(""); 
 
     const handleAddTask = () => {
         if (title.trim() !== '') {
@@ -21,7 +21,7 @@ const AddTask = (onAddTask) => {
                 onChangeText={(newTitle) => setTitle(newTitle)}
                 returnKeyType="done"
             />
-            <Button onPress={ handleAddTask }>Add Task</Button>
+            <Button onPress={handleAddTask} title="Add Task"/>
         </View>
     );
 };
